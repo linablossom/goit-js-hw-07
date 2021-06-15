@@ -5,7 +5,8 @@ const refs = {
   boxEl: document.querySelector("#boxes"),
 };
 
-const getRandNum = () => Math.floor(Math.random() * 255);
+const rgbMaxValue = 255;
+const getRandNum = () => Math.floor(Math.random() * rgbMaxValue);
 const getRandomRgbColor = () =>
   `rgb(${getRandNum()}, ${getRandNum()}, ${getRandNum()})`;
 
