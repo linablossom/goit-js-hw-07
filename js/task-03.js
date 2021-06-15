@@ -16,13 +16,14 @@ const images = [
   },
 ];
 
-const getGalleryEl = document.querySelector("#gallery");
-getGalleryEl.setAttribute("style", "display:flex");
+const galleryEl = document.querySelector("#gallery");
+galleryEl.setAttribute("style", "display:flex");
 
-const addGallery = images.map((img) => {
-  getGalleryEl.insertAdjacentHTML(
-    "afterbegin",
-    `<li style="margin-right: 20px"><img src="${img.url}" alt="${img.alt}" width="500px" height="auto"</li style="margin-right: 10px">`
-  );
-});
-console.log(getGalleryEl);
+const galleryStr = images
+  .map((img) => {
+    return `<li style="margin-right: 20px"><img src="${img.url}" alt="${img.alt}" width="500px" height="auto"</li>`;
+  })
+  .join("");
+
+galleryEl.insertAdjacentHTML("afterbegin", galleryStr);
+console.log(galleryEl);
